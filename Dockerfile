@@ -4,10 +4,10 @@ RUN apt-get update -y
 RUN apt-get install git -y
 RUN apt-get install apache2 -y
 WORKDIR /
-RUN git clone https://github.com/wiz
-WORKDIR /wiz/
-RUN git checkout -b test-003
-RUN git pull origin test-003
+RUN git clone https://github.com/dwisniewski17/web-app-docker-demo
+WORKDIR /web-app-docker-demo/
+RUN git checkout -b master
+RUN git pull origin master
 RUN cp index.html /var/www/html/
 RUN service apache2 restart
 EXPOSE 80
